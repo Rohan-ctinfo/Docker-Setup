@@ -1,0 +1,178 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bootcamp Booking Successful</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body
+    style="margin:0;padding:0;background-color:#f4f7fb;  font-family: 'Almarai', sans-serif;
+color:#222;"
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      style="max-width:600px;margin:40px auto 0px;border-collapse:collapse;"
+    >
+      <tr>
+        <td
+          style="background:#ffffff;padding:28px;border-radius:0px;box-shadow:0 2px 6px rgba(0,0,0,0.05);"
+        >
+
+          <!-- Header -->
+          <div style="text-align:center;">
+            <img
+              src="{{logo}}"
+              alt="Logo"
+              style="max-width:120px;margin-bottom:16px;"
+            />
+            <h1
+              style="margin:0;font-size:22px;color:#043248; margin-bottom: 30px;"
+            >🎉 Booking Confirmed!</h1>
+            <p
+              style="margin:8px 0 0;font-size:18px;color:#555; text-align: left;"
+            >
+              Hi
+              <strong>{{#if
+                  is_admin
+                }}Admin{{else}}{{first_name}}{{/if}}</strong>,
+
+            </p>
+            {{#if is_admin}}
+              <p
+                style="margin:2px 0 0;font-size:15px;color:#555; text-align: left;"
+              >
+                A new booking has been made for the
+                <strong>{{bootcamp_title}}</strong>.
+              </p>
+            {{else}}
+              <p
+                style="margin:2px 0 0;font-size:15px;color:#555; text-align: left;"
+              >
+                your booking for the
+                <strong>{{bootcamp_title}}</strong>
+                is now confirmed!
+              </p>
+            {{/if}}
+
+          </div>
+
+          <!-- Bootcamp Info -->
+          <div style="margin-top:20px;">
+            <p
+              style="margin:0 0 8px;font-size:18px;color:#111;font-weight:bold;"
+            >Bootcamp Details</p>
+            <table
+              width="100%"
+              cellpadding="6"
+              cellspacing="0"
+              role="presentation"
+              style="border-collapse:collapse;"
+            >
+              {{#if is_admin}}
+                <tr>
+                  <td style="font-size:15px;color:#444;"><strong>User Name</strong></td>
+                  <td style="font-size:15px;color:#444;">{{first_name}}
+                    {{last_name}}</td>
+                </tr>
+                <tr>
+                  <td style="font-size:15px;color:#444;"><strong>User Email</strong></td>
+                  <td style="font-size:15px;color:#444;">{{email}}</td>
+                </tr>
+              {{/if}}
+              <tr>
+                <td style="font-size:15px;color:#444;width:40%;"><strong
+                  >Bootcamp</strong></td>
+                <td style="font-size:15px;color:#444;">{{bootcamp_title}}</td>
+              </tr>
+              <tr>
+                <td style="font-size:15px;color:#444;"><strong>Start Date</strong></td>
+                <td style="font-size:15px;color:#444;">{{start_date}}</td>
+              </tr>
+              <tr>
+                <td style="font-size:15px;color:#444;"><strong>End Date</strong></td>
+                <td style="font-size:15px;color:#444;">{{end_date}}</td>
+              </tr>
+              <tr>
+                <td style="font-size:15px;color:#444;"><strong
+                  >Price</strong></td>
+                <td style="font-size:15px;color:#444;">{{price}}</td>
+              </tr>
+
+            </table>
+          </div>
+
+          <div style="margin-top:20px;">
+            <p
+              style="margin:0 0 8px;font-size:18px;color:#111;font-weight:bold;"
+            >Nuvio Bank Details</p>
+            <table
+              width="100%"
+              cellpadding="6"
+              cellspacing="0"
+              role="presentation"
+              style="border-collapse:collapse;"
+            >
+
+              <tr>
+                <td style="font-size:15px;color:#444;"><strong>Swift</strong></td>
+                <td style="font-size:15px;color:#444;">MCBLMUMU
+                  7438 000M UR</td>
+              </tr>
+
+              <tr>
+                <td style="font-size:15px;color:#444;"><strong>IBAN</strong></td>
+                <td style="font-size:15px;color:#444;">MU40MCBL0901000454087438000MUR</td>
+              </tr>
+
+            </table>
+          </div>
+
+          <div style="text-align:left; margin-top: 30px;">
+            <p style="margin-bottom:0px; font-size: 15px; font-weight:500">Best
+              regards,</p>
+            <h4
+              style="font-size: 18px; line-height: 24px; margin-top: 6px; margin-bottom: 0px;  font-weight: 600;"
+            >{{company_name}} Team</h4>
+          </div>
+
+          <!-- Footer -->
+
+        </td>
+      </tr>
+
+      <table
+        align="center"
+        style="text-align: center; vertical-align: top;max-width: 600px; width: 100%; background:#043248"
+      >
+        <tbody>
+          <tr>
+            <td
+              style=" vertical-align: top; padding-left: 30px; padding-right: 30px; padding-top: 30px; padding-bottom: 30px;"
+            >
+              <p
+                style="margin-bottom:10px; margin-top: 0px; text-align:center; color:#fff;"
+              >Need More Help?</p>
+              <!-- Dynamic support link -->
+              <a
+                href="{{support_url}}"
+                style="color:#fff; text-decoration: underline; text-align:center; display: block; font-family: 'Helvetica', Arial, sans-serif;"
+              >
+                {{support_text}}
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </table>
+
+  </body>
+</html>
