@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: node-backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/app           # Sync local files to container
+      - /app/node_modules # Prevent overwriting node_modules
+    environment:
+      - NODE_ENV=development
+    command: ["npm", "start"]
