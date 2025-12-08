@@ -24,7 +24,7 @@ app.use("/api", authGuard, routes);
 
 
 app.get("/", (req, res) => {
-  res.send(`App is running on port: ${PORT}`);
+  res.send(`App is running on port 4000: ${PORT}`);
 });
 
 export default app;

@@ -5,7 +5,7 @@
   "main": "backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon backend/server.js"
+    "start": "nodemon --watch backend --ext js,json --legacy-watch backend/server.js"
   },
   "author": "",
   "license": "ISC",
